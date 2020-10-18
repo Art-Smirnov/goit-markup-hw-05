@@ -45,7 +45,7 @@
 
 /* Button */
 .button {
-  display: inline-block;
+  display: inline-flex;
   border-radius: 4px;
   padding: 10px 32px;
   min-width: 200px;
@@ -61,6 +61,9 @@
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+
+  transition: color 250ms var(--timing-function),
+    background-color 250ms var(--timing-function);
 }
 
 .button:hover,
@@ -127,7 +130,31 @@
   display: flex;
   justify-content: space-between;
 }
+.activity-thumb {
+  position: relative;
+}
 
+.activity-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+
+  position: absolute;
+  background: rgba(47, 48, 58, 0.8);
+
+  width: 370px;
+  height: 70px;
+}
+
+.activity-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--primary-white-color);
+}
 /* Персонал */
 
 .stuff {
@@ -189,6 +216,9 @@
   height: 44px;
   width: 44px;
   border-radius: 50%;
+
+  transition: background-color 250ms var(--timing-function),
+    color 250ms var(--timing-function);
 }
 
 .networks .icon {
@@ -218,11 +248,14 @@
   border-radius: 4px;
   width: 170px;
   height: 90px;
+
+  transition: border-color 250ms var(--timing-function);
   /* outline: 1px solid tomato; */
 }
 
 .clients-list .link {
   color: currentColor;
+  transition: color 250ms var(--timing-function);
 }
 
 .clients-list .item {
@@ -239,7 +272,8 @@
   border-color: var(--accent-color);
 }
 
-/* бекдроп */
+/* Модельное окно */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -247,6 +281,8 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function);
 }
 
 .backdrop.is-hidden {
@@ -258,7 +294,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: right;
+  padding: 8px;
 
   background: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -267,4 +304,27 @@
 
   min-width: 528px;
   min-height: 581px;
+
+  transform: scale(1) translate(-50%, -50%);
+  transition: transform 250ms var(--timing-function);
+}
+
+.backdrop.is-hidden .modal {
+  transform: scale(0.9) translate(-50%, -50%);
+}
+.modal-btn {
+  /* display: inline-block; */
+  padding: 5px 9px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.icon-close {
+  fill: currentColor;
+}
+.modal-btn:hover {
+  color: var(--primary-white-color);
+  background: var(--accent-color);
+  border-color: var(--primary-white-color);
 }

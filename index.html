@@ -139,26 +139,35 @@
         <div class="container">
           <h2 class="section-title">Чем мы занимаемся</h2>
           <ul class="activity-list list">
-            <li class="item">
+            <li class="activity-thumb item">
               <img
                 src="./pictures/img/programer.jpg"
                 alt="Программист за роботой"
                 width="370"
               />
+              <div class="activity-overlay">
+                <span class="activity-text">Десктопные приложения</span>
+              </div>
             </li>
-            <li class="item">
+            <li class="activity-thumb item">
               <img
                 src="./pictures/img/designer.jpg"
                 alt="Веб-дизайнер за роботой над мобильным приложением"
                 width="370"
               />
+              <div class="activity-overlay">
+                <span class="activity-text">Мобильные приложения</span>
+              </div>
             </li>
-            <li class="item">
+            <li class="activity-thumb item">
               <img
                 src="./pictures/img/creative-artist.jpg"
                 alt="Креативный веб-дизайнер работает с приложением для подбора цветов"
                 width="370"
               />
+              <div class="activity-overlay">
+                <span class="activity-text">Дизайнерские решения</span>
+              </div>
             </li>
           </ul>
         </div>
@@ -682,7 +691,13 @@
       </div>
     </footer>
     <div data-modal class="backdrop is-hidden">
-      <div class="modal"><button data-modal-close></button></div>
+      <div class="modal">
+        <button class="modal-btn" width="30" height="30" data-modal-close>
+          <svg class="icon-close" width="11" height="11">
+            <use href="./pictures/icons/icomoon2/close.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
     </div>
     <script src="./js/modal.js"></script>
   </body>
